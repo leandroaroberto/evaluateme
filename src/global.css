@@ -1,0 +1,29 @@
+:root {
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+
+  --white: #fff;
+
+  --gray-100: #fafafa;
+  --gray-200: #e3e1e4;
+  --gray-300: #75747a;
+  --gray-400: #2f2f33;
+  --gray-500: #0c0c0d;
+
+  --purple: #685ed9;
+  --purple-dark: #4439c7;
+  --gradient-light: #4453b2;
+
+  --gradient-dark-500: #3f347e;
+  --gradient-dark-900: #0f0a31;
+
+  --yellow-light: #faf2e7;
+  --yellow: #f5d9ad;
+  --gradient-yellow-500: #f9d399;
+  --gradient-yellow-900: #d4983e;
+}
+
+html,body {
+  height: 100%;
+  margin: 0;
+}
