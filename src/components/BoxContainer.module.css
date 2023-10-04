@@ -1,0 +1,14 @@
+.boxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10.625rem;
+}
+
+.mainBox {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    /* overflow: hidden; */
+}

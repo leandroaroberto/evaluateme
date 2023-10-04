@@ -1,0 +1,48 @@
+.rating {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+}
+
+.ratingContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.star {
+    color: var(--gray-200);
+}
+
+.starSelected {
+    color: var(--gradient-yellow-900);
+}
+
+.ratingDescription {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+    color: var(--gray-300);
+    font-size: small;
+}
+
+.rating .buttonContent {
+    display: flex; 
+    flex: 1;
+    padding-top: 40px;
+}
+
+.rating button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    color: var(--gray-100);
+    background: var(--purple);
+    border: solid var(--purple);
+    border-radius: 8px;
+    width: 100%;
+    font-size: large;
+    font-weight: bold;
+}

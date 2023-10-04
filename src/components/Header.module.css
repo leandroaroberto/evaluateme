@@ -1,16 +1,6 @@
 .headerContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 10.625rem;
-}
-
-.headerBox {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--purple);
-    border-radius: 8px;
-    /* overflow: hidden; */
 }
 
 .headerContainer header {
@@ -23,18 +13,4 @@
 
 .headerContainer header img {
     margin-top: -48px;
-}
-
-
-.headerContainer main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: var(--white);
-    width: 410px;
-    min-height: 376px;
-}
-
-.headerContainer main p{
-    margin: 10px;
 }

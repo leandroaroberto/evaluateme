@@ -1,0 +1,20 @@
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    width: 410px;
+    min-height: 376px;
+    padding-top: 48px;
+}
+.contentContainer main {
+    text-align: center;
+}
+.contentContainer p{
+    margin: 10px;
+}
+
+
+.contentContainer .product {
+    color: var(--purple-dark);
+}
