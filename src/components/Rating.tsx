@@ -1,57 +1,55 @@
-import { ArrowRight, Star } from '@phosphor-icons/react'
+import { ArrowRight } from '@phosphor-icons/react'
 import styles from './Rating.module.css'
 import { useState } from 'react'
+import { CustomStar } from './CustomStar'
 
+const starsContent = [
+    {id: 1, selected: 0},
+    {id: 2, selected: 0},
+    {id: 3, selected: 0},
+    {id: 4, selected: 0},
+    {id: 5, selected: 0},
+]
+
+interface starsContentProps {
+  id: number;
+  selected: number;
+}
 
 export const Rating = () => {
 
-    const stars = [
-        {id: 1, color: 'yellow'},
-        {id: 1, color: 'yellow'},
-        {id: 1, color: 'yellow'},
-        {id: 1, color: 'gray'},
-        {id: 1, color: 'gray'},
-    ]
+    const [stars, setStars] = useState<starsContentProps[]>(starsContent)
 
-    const [selected, setSelected] = useState<boolean>(false)
 
-    const checked = () => {
-        setSelected( ! selected)
+    const handleSelection = (starId: number) => {
+        const starSelectedIdVal = + (! stars[starId -1].selected)
+
+        // console.log(starId)
+        // console.log(starSelectedIdVal)
+
+        const newStars = stars.reduce((acc, star) => {
+          if (star.id <= starId) {
+            return [...acc, {id: star.id, selected: starSelectedIdVal}]
+          } else {
+            return [...acc, {id: star.id, selected: 0}]
+          }
+        }, [] )
+
+        setStars(newStars)
+
     }
 
   return (
     <div className={styles.rating}>
         <div className={styles.ratingContent}>
-            <div className={selected ? styles.starSelected : styles.star} onClick={checked}>
-                <Star
-                    size={30} 
-                    weight="fill" 
+            {stars.map(star => (
+                <CustomStar
+                    key={star.id}
+                    id={star.id}
+                    selected={stars[star.id -1].selected}
+                    onClick={() => handleSelection(star.id)}
                 />
-            </div>
-            <div className={selected ? styles.starSelected : styles.star} onClick={checked}>
-                <Star
-                    size={30} 
-                    weight="fill" 
-                />
-            </div>
-            <div className={selected ? styles.starSelected : styles.star} onClick={checked}>
-                <Star
-                    size={30} 
-                    weight="fill" 
-                />
-            </div>
-            <div className={selected ? styles.starSelected : styles.star} onClick={checked}>
-                <Star
-                    size={30} 
-                    weight="fill" 
-                />
-            </div>
-            <div className={selected ? styles.starSelected : styles.star} onClick={checked}>
-                <Star
-                    size={30} 
-                    weight="fill" 
-                />
-            </div>
+            ))}
         </div>
         <div className={styles.ratingDescription}>
             <span>Ruim</span>

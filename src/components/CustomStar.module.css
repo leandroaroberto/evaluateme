@@ -1,0 +1,7 @@
+.star {
+    color: var(--gray-200);
+}
+
+.starSelected {
+    color: var(--gradient-yellow-900);
+}

@@ -3,8 +3,15 @@ import './global.css'
 import styles from './App.module.css'
 import { BoxContainer } from './components/BoxContainer'
 import { Content } from './components/Content'
+import { useState } from 'react'
+
+interface formDataProps {
+  stars: number | null
+  comments?: string
+}
 
 function App() {
+  const [formData, setFormData] = useState<formDataProps[]>([])
 
   return (
     <div className={styles.container}>
