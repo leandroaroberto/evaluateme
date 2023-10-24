@@ -14,3 +14,11 @@
 .headerContainer header img {
     margin-top: -48px;
 }
+
+.backButtonContainer .backButton {
+    cursor: pointer;
+}
+
+.backButtonContainer {
+
+}

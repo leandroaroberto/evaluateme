@@ -1,6 +1,8 @@
 import { ArrowRight } from '@phosphor-icons/react'
 import styles from './Rating.module.css'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { FormContext } from '../Context'
+
 import { CustomStar } from './CustomStar'
 
 const starsContent = [
@@ -16,18 +18,18 @@ interface starsContentProps {
   selected: number;
 }
 
+
 export const Rating = () => {
 
     const [stars, setStars] = useState<starsContentProps[]>(starsContent)
-
+    const [formData, setFormData, setPageControl ] : any = useContext(FormContext);
 
     const handleSelection = (starId: number) => {
         const starSelectedIdVal = + (! stars[starId -1].selected)
 
-        // console.log(starId)
-        // console.log(starSelectedIdVal)
+        setFormData({...formData, stars: starSelectedIdVal ? starId : 0})
 
-        const newStars = stars.reduce((acc, star) => {
+        const newStars = stars.reduce((acc, star) : any => {
           if (star.id <= starId) {
             return [...acc, {id: star.id, selected: starSelectedIdVal}]
           } else {
@@ -36,7 +38,10 @@ export const Rating = () => {
         }, [] )
 
         setStars(newStars)
+    }
 
+    const nextPage = () => {
+      setPageControl(1)
     }
 
   return (
@@ -56,7 +61,9 @@ export const Rating = () => {
             <span>Ótimo</span>
         </div>
         <div className={styles.buttonContent}>
-            <button>
+            <button 
+              onClick={nextPage}
+            >
                 <span>Confirmar</span>
                 <ArrowRight size={30}/>
             </button>
