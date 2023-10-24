@@ -18,3 +18,24 @@
 .contentContainer .product {
     color: var(--purple-dark);
 }
+
+.buttonContent {
+    display: flex; 
+    flex: 1;
+    padding-top: 40px;
+}
+
+.buttonContent button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    color: var(--gray-100);
+    background: var(--purple);
+    border: solid var(--purple);
+    border-radius: 8px;
+    width: 100%;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}

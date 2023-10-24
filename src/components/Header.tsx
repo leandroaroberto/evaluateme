@@ -1,12 +1,12 @@
 import styles from './Header.module.css'
 import Picture from '../assets/apple-watch.svg'
 import { useContext } from 'react';
-import { FormContext } from '../Context'
+import { PageContext } from '../Context'
 import { ArrowLeft } from '@phosphor-icons/react';
 
 
 export const Header = () => {
-  const [ formData, setFormData, setPageControl, pageControl ] : any = useContext(FormContext);
+  const [ pageControl, setPageControl ] : any = useContext(PageContext);
 
   const backPage = () => {
     setPageControl(0)
