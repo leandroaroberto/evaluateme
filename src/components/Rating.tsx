@@ -15,13 +15,34 @@ export const Rating = () => {
 
         setFormData({...formData, stars: starSelectedIdVal ? starId : 0})
 
-        const newStars = stars.reduce((acc: [], star: starsContentProps) => {
-          if (star.id <= starId) {
-            return [...acc, {id: star.id, selected: starSelectedIdVal}]
-          } else {
-            return [...acc, {id: star.id, selected: 0}]
-          }
-        }, [] )
+        let newStars = []
+        if (starId < 5 && stars[starId]?.selected == 1 ){
+          newStars = stars.reduce((acc: [], star: starsContentProps) => {
+            if (star.id > starId) {
+              return [...acc, {id: star.id, selected: starSelectedIdVal}]
+            } else {
+              return [...acc, {id: star.id, selected: ! starSelectedIdVal}]
+            }
+          }, [] )
+        } else if (starId > 1 && stars[starId-1]?.selected == 1) {
+          newStars = stars.reduce((acc: [], star: starsContentProps) => {
+            if (star.id == starId) {
+              return [...acc, {id: star.id, selected: starSelectedIdVal}]
+            } else if (star.id < starId){
+              return [...acc, {id: star.id, selected: ! starSelectedIdVal}]
+            } else {
+              return [...acc, {id: star.id, selected: starSelectedIdVal}]
+            }
+          }, [] )
+        } else {
+          newStars = stars.reduce((acc: [], star: starsContentProps) => {
+            if (star.id <= starId) {
+              return [...acc, {id: star.id, selected: starSelectedIdVal}]
+            } else {
+              return [...acc, {id: star.id, selected: 0}]
+            }
+          }, [] )
+        }
 
         setStars(newStars)
     }
