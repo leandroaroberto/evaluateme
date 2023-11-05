@@ -12,13 +12,15 @@
 }
 
 .headerContainer header img {
+    display: flex;
     margin-top: -48px;
 }
 
-.backButtonContainer .backButton {
-    cursor: pointer;
-}
-
 .backButtonContainer {
-
+    position: fixed;
+    padding-top: 24px;
+    padding-left: 20px;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
 }

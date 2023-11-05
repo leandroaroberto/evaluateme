@@ -15,13 +15,13 @@ export const Header = () => {
   return (
     <div className={styles.headerContainer}>
       <header>
-        { pageControl === 1 && (
+        <img src={Picture}/>
+      </header>
+      { pageControl === 1 && (
             <div className={styles.backButtonContainer}>
               <ArrowLeft size={30} color='white' onClick={backPage} className={styles.backButton}/>
             </div>
         ) }
-        <img src={Picture}/>
-      </header>
     </div>
   )
 }

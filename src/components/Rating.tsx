@@ -13,8 +13,6 @@ export const Rating = () => {
     const handleSelection = (starId: number) => {
         const starSelectedIdVal = + (! stars[starId -1].selected)
 
-        setFormData({...formData, stars: starSelectedIdVal ? starId : 0})
-
         let newStars = []
         if (starId < 5 && stars[starId]?.selected == 1 ){
           newStars = stars.reduce((acc: [], star: starsContentProps) => {
@@ -45,6 +43,8 @@ export const Rating = () => {
         }
 
         setStars(newStars)
+
+        setFormData({...formData, stars: starId})
     }
 
   return (

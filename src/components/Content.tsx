@@ -56,7 +56,9 @@ export const Content = (props : ContentProps) => {
                 <span>
                   Confirmar
                 </span>
-                <ArrowRight size={30}/>
+                <span>
+                  <ArrowRight size={30}/>
+                </span>
             </button>
         )
         :
@@ -67,7 +69,9 @@ export const Content = (props : ContentProps) => {
               <span>
                 Enviar
               </span>
-              <ArrowRight size={30}/>
+              <span>
+                <ArrowRight size={30}/>
+              </span>
           </button>
       )
         }

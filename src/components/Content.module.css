@@ -22,7 +22,8 @@
 .buttonContent {
     display: flex; 
     flex: 1;
-    padding-top: 40px;
+    padding: 40px 0;
+    width: 314px;
 }
 
 .buttonContent button {
@@ -38,4 +39,18 @@
     font-size: large;
     font-weight: bold;
     cursor: pointer;
+}
+
+.buttonContent button span {
+    margin: 0 20px;
+}
+
+.contentContainer textarea {
+    width: 314px;
+    height: 120px;
+    color: var(--gray-300);
+    background: var(--gray-200);
+    border-color: var(--gray-200);
+    border-radius: 8px;
+    padding: 12px;
 }
